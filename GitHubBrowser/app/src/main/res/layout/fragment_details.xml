@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<android.support.constraint.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    android:paddingLeft="@dimen/small_padding"
+    android:paddingRight="@dimen/small_padding"
+    android:paddingBottom="@dimen/big_padding">
+
+    <LinearLayout
+        android:id="@+id/name_view"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/repo_details_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/DetailsTitle"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryLight" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/description_view"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_view">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DetailsLabel"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/description_label"/>
+
+        <TextView
+            android:id="@+id/repo_details_description"
+            style="@style/DetailsText"
+            android:padding="@dimen/small_padding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/stats_view"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description_view">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1,2">
+            <TableRow>
+                <TextView
+                    style="@style/DetailsLabel"
+                    android:text="@string/language_label"/>
+                <TextView
+                    style="@style/DetailsLabel"
+                    android:text="@string/watchers_label"/>
+                <TextView
+                    style="@style/DetailsLabel"
+                    android:text="@string/stargazers_label"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/repo_details_language"
+                    style="@style/DetailsTableText"/>
+
+                <TextView
+                    android:id="@+id/repo_details_watchers"
+                    style="@style/DetailsTableText"/>
+
+                <TextView
+                    android:id="@+id/repo_details_star_count"
+                    style="@style/DetailsTableText"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dates_view"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/big_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/stats_view">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1">
+            <TableRow>
+                <TextView
+                    style="@style/DetailsLabel"
+                    android:text="@string/created_at_label"/>
+                <TextView
+                    style="@style/DetailsLabel"
+                    android:text="@string/updated_at_label"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/repo_details_created_at"
+                    style="@style/DetailsTableText"/>
+                <TextView
+                    android:id="@+id/repo_details_updated_at"
+                    style="@style/DetailsTableText"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
+</ScrollView>
